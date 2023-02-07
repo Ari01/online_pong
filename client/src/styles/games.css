@@ -1,0 +1,43 @@
+#game-canvas {
+  border: 1px solid;
+  background-color: rgb(0, 0, 0);
+  display: block;
+  margin: 0px auto;
+  background: black;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.game-buttons-container {
+  position: absolute;
+  z-index: 1;
+  font-size: 26px;
+  font-style: bold;
+  margin: 0 1rem;
+  padding-left: 1%;
+  padding-right: 1%;
+
+  top: 80px;
+}
+
+.game-buttons-container-vitesse {
+  position: absolute;
+  z-index: 1;
+  font-size: 26px;
+  font-style: bold;
+}
+
+.game {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.timer {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  color: white;
+  font-size: 200px;
+}
