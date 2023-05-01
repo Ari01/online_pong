@@ -34,7 +34,7 @@ export default function History(props: { userId: number }) {
 
   useEffect(() => {
     axios
-      .get(`http://10.11.7.11:3001/api/users/games/${props.userId}`, {
+      .get(`${process.env.REACT_APP_API}/api/users/games/${props.userId}`, {
         withCredentials: true,
       })
       .then((response) => {

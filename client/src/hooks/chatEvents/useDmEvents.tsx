@@ -15,7 +15,7 @@ export default function useDmEvents({ setConvs }: Props) {
 
   useEffect(() => {
     axios
-      .get("http://10.11.7.11:3001/api/chat/getNewMessages", {
+      .get(`${process.env.REACT_APP_API}/api/chat/getNewMessages`, {
         withCredentials: true,
       })
       .then((response) => {

@@ -10,7 +10,7 @@ export default function Login2fa() {
     e.preventDefault();
     axios
       .post(
-        "http://10.11.7.11:3001/api/auth/2fa/authenticate",
+        `${process.env.REACT_APP_API}/api/auth/2fa/authenticate`,
         { code },
         { withCredentials: true }
       )

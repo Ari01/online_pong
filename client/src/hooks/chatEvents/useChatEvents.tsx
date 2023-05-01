@@ -78,14 +78,14 @@ export default function useChatEvents({
 
     // get Channels
     axios
-      .get("http://10.11.7.11:3001/api/chat/privateChannels", {
+      .get(`${process.env.REACT_APP_API}/api/chat/privateChannels`, {
         withCredentials: true,
       })
       .then((response) => {
         setPrivateChans(response.data);
       });
     axios
-      .get("http://10.11.7.11:3001/api/chat/publicChannels", {
+      .get(`${process.env.REACT_APP_API}/api/chat/publicChannels`, {
         withCredentials: true,
       })
       .then((response) => {

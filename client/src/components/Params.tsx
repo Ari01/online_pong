@@ -19,7 +19,7 @@ const Params = () => {
   const deactivate2fa = () => {
     axios
       .post(
-        "http://10.11.7.11:3001/api/auth/2fa/turn-off",
+        `${process.env.REACT_APP_API}/api/auth/2fa/turn-off`,
         {},
         {
           withCredentials: true,
@@ -30,7 +30,7 @@ const Params = () => {
 
   // generate 2fa qr code
   async function generate2fa() {
-    const res = await fetch("http://10.11.7.11:3001/api/auth/2fa/generate", {
+    const res = await fetch(`${process.env.REACT_APP_API}/api/auth/2fa/generate`, {
       method: "POST",
       credentials: "include",
     });
@@ -48,7 +48,7 @@ const Params = () => {
     event.preventDefault();
     axios
       .post(
-        "http://10.11.7.11:3001/api/auth/2fa/turn-on",
+        `${process.env.REACT_APP_API}/api/auth/2fa/turn-on`,
         {
           twoFactorAuthenticationCode: code,
         },

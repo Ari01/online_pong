@@ -42,7 +42,7 @@ export const CommonContext = ({ selected }: UserProps) => {
   const handleBlock = () => {
     axios
       .post(
-        "http://10.11.7.11:3001/api/users/blockUser",
+        `${process.env.REACT_APP_API}/api/users/blockUser`,
         {
           userId: selected.id,
         },

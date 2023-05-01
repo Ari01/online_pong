@@ -11,7 +11,7 @@ export default function AddFriend() {
   const addFriend = (e: React.SyntheticEvent) => {
     e.preventDefault();
     axios
-      .get(`http://10.11.7.11:3001/api/users/username/${name}`, {
+      .get(`${process.env.REACT_APP_API}/api/users/username/${name}`, {
         withCredentials: true,
       })
       .then((response) => {
