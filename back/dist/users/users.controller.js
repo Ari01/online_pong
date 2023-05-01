@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var _a, _b, _c, _d, _e, _f;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsersController = void 0;
 const common_1 = require("@nestjs/common");
@@ -113,7 +114,7 @@ __decorate([
     __param(0, (0, common_1.Req)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Promise)
+    __metadata("design:returntype", typeof (_b = typeof Promise !== "undefined" && Promise) === "function" ? _b : Object)
 ], UsersController.prototype, "findMe", null);
 __decorate([
     (0, common_1.Get)("userid/:id"),
@@ -121,7 +122,7 @@ __decorate([
     __param(0, (0, common_1.Param)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Promise)
+    __metadata("design:returntype", typeof (_c = typeof Promise !== "undefined" && Promise) === "function" ? _c : Object)
 ], UsersController.prototype, "findOneById", null);
 __decorate([
     (0, common_1.Get)("username/:username"),
@@ -129,7 +130,7 @@ __decorate([
     __param(0, (0, common_1.Param)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Promise)
+    __metadata("design:returntype", typeof (_d = typeof Promise !== "undefined" && Promise) === "function" ? _d : Object)
 ], UsersController.prototype, "findOneByUsername", null);
 __decorate([
     (0, common_1.Post)("addFriend"),
@@ -201,7 +202,7 @@ __decorate([
     __param(0, (0, common_1.Req)()),
     __param(1, (0, common_1.UploadedFile)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:paramtypes", [Object, typeof (_f = typeof Express !== "undefined" && (_e = Express.Multer) !== void 0 && _e.File) === "function" ? _f : Object]),
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "uploadAvatar", null);
 __decorate([
@@ -242,8 +243,7 @@ __decorate([
 UsersController = __decorate([
     (0, common_1.Controller)("users"),
     __param(0, (0, typeorm_2.InjectRepository)(database_1.User)),
-    __metadata("design:paramtypes", [typeorm_1.Repository,
-        users_service_1.UsersService,
+    __metadata("design:paramtypes", [typeof (_a = typeof typeorm_1.Repository !== "undefined" && typeorm_1.Repository) === "function" ? _a : Object, users_service_1.UsersService,
         notifs_service_1.NotifService])
 ], UsersController);
 exports.UsersController = UsersController;

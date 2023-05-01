@@ -8,12 +8,12 @@ export declare class AuthService {
     private readonly jwtService;
     private readonly usersService;
     constructor(userRepository: Repository<User>, jwtService: JwtService, usersService: UsersService);
-    createUser(details: UserDetails): Promise<User>;
-    validateUser(details: UserDetails): Promise<User>;
-    findUser(id: number): Promise<User>;
-    getAuthenticatedUser(username: string): Promise<User>;
+    createUser(details: UserDetails): unknown;
+    validateUser(details: UserDetails): unknown;
+    findUser(id: number): unknown;
+    getAuthenticatedUser(username: string): unknown;
     getCookieWithJwtToken(userId: number): string;
     getCookieWithJwtAccessToken(userId: number, isSecondFactorAuthenticated?: boolean): string;
     getLogoutCookie(): string;
-    getUserFromAuthenticationToken(token: string): Promise<User>;
+    getUserFromAuthenticationToken(token: string): unknown;
 }

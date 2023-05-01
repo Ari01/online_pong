@@ -1,4 +1,4 @@
-declare const JwtGuard_base: import("@nestjs/passport").Type<import("@nestjs/passport").IAuthGuard>;
+declare const JwtGuard_base: any;
 export declare class JwtGuard extends JwtGuard_base {
 }
 export {};

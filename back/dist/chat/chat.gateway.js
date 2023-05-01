@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ChatGateway = void 0;
 const websockets_1 = require("@nestjs/websockets");
@@ -407,162 +408,162 @@ let ChatGateway = class ChatGateway {
 };
 __decorate([
     (0, websockets_1.WebSocketServer)(),
-    __metadata("design:type", socket_io_1.Namespace)
+    __metadata("design:type", typeof (_a = typeof socket_io_1.Namespace !== "undefined" && socket_io_1.Namespace) === "function" ? _a : Object)
 ], ChatGateway.prototype, "server", void 0);
 __decorate([
     (0, websockets_1.SubscribeMessage)("login"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.User]),
+    __metadata("design:paramtypes", [typeof (_b = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _b : Object, database_1.User]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "login", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("logout"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.User]),
+    __metadata("design:paramtypes", [typeof (_c = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _c : Object, database_1.User]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "logout", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("updateUser"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.User]),
+    __metadata("design:paramtypes", [typeof (_d = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _d : Object, database_1.User]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "updateUser", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("updateUserStatus"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_e = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _e : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "updateUserStatus", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("getFriends"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.User]),
+    __metadata("design:paramtypes", [typeof (_f = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _f : Object, database_1.User]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "getFriends", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("notif"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_g = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _g : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "notify", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("acceptFriendRequest"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.Notif]),
+    __metadata("design:paramtypes", [typeof (_h = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _h : Object, database_1.Notif]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "addFriend", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("deleteNotif"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.Notif]),
+    __metadata("design:paramtypes", [typeof (_j = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _j : Object, database_1.Notif]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "deleteNotif", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("deleteFriend"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_k = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _k : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "deleteFriend", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("acceptGameInvite"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.Notif]),
+    __metadata("design:paramtypes", [typeof (_l = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _l : Object, database_1.Notif]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "acceptInvite", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("getChannels"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Number]),
+    __metadata("design:paramtypes", [typeof (_m = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _m : Object, Number]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "getChannels", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("createChannel"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_o = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _o : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "createChannel", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("joinChannel"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_p = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _p : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "joinChannel", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("deleteChannel"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_q = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _q : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "deleteChannel", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("leaveChannel"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_r = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _r : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "leaveChannel", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("chanInvite"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_s = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _s : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "chanInvite", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("acceptChannelInvite"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.Notif]),
+    __metadata("design:paramtypes", [typeof (_t = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _t : Object, database_1.Notif]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "acceptChanInvite", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("chanMessage"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_u = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _u : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "message", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("setChannelPassword"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_v = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _v : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "setChannelPassword", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("removeChannelPassword"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.Channel]),
+    __metadata("design:paramtypes", [typeof (_w = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _w : Object, database_1.Channel]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "removeChannelPassword", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("banUser"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_x = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _x : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "banUser", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("muteUser"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_y = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _y : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "muteUser", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("setAdmin"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_z = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _z : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "setAdmin", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("getConversation"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_0 = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _0 : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "getConversation", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("directMessage"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_1 = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _1 : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "directMessage", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("updateNewMessages"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_2 = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _2 : Object, Object]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "updateNewMessages", null);
 ChatGateway = __decorate([

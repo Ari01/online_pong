@@ -1,4 +1,4 @@
-declare const TwoFactorGuard_base: import("@nestjs/passport").Type<import("@nestjs/passport").IAuthGuard>;
+declare const TwoFactorGuard_base: any;
 export declare class TwoFactorGuard extends TwoFactorGuard_base {
 }
 export {};

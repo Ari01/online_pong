@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GameGateway = void 0;
 const websockets_1 = require("@nestjs/websockets");
@@ -231,108 +232,108 @@ let GameGateway = class GameGateway {
 };
 __decorate([
     (0, websockets_1.WebSocketServer)(),
-    __metadata("design:type", socket_io_1.Namespace)
+    __metadata("design:type", typeof (_a = typeof socket_io_1.Namespace !== "undefined" && socket_io_1.Namespace) === "function" ? _a : Object)
 ], GameGateway.prototype, "server", void 0);
 __decorate([
     (0, websockets_1.SubscribeMessage)("login"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.User]),
+    __metadata("design:paramtypes", [typeof (_b = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _b : Object, database_1.User]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "login", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("logout"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.User]),
+    __metadata("design:paramtypes", [typeof (_c = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _c : Object, database_1.User]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "logout", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("getRoom"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.User]),
+    __metadata("design:paramtypes", [typeof (_d = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _d : Object, database_1.User]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "getRoom", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("joinRoom"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_e = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _e : Object, Object]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "joinRoom", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("join"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, String]),
+    __metadata("design:paramtypes", [typeof (_f = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _f : Object, String]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "join", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("leaveRoom"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_g = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _g : Object, Object]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "leaveRoom", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("spectate"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_h = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _h : Object, Object]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "spectate", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("setReady"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_j = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _j : Object, Object]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "setReady", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("createGame"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_k = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _k : Object, Object]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "createGame", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("getGame"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Number]),
+    __metadata("design:paramtypes", [typeof (_l = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _l : Object, Number]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "getGame", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("getCurrentGames"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_m = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _m : Object, Object]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "getCurrentGames", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("startGame"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_o = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _o : Object, Object]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "startGame", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("rematch"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_p = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _p : Object, Object]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "rematch", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("movePaddle"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_q = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _q : Object, Object]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "movePaddle", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("stopPaddle"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, Object]),
+    __metadata("design:paramtypes", [typeof (_r = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _r : Object, Object]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "stopPaddle", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("searchOpponent"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.User]),
+    __metadata("design:paramtypes", [typeof (_s = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _s : Object, database_1.User]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "searchOpponent", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)("stopQueue"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [socket_io_1.Socket, database_1.User]),
+    __metadata("design:paramtypes", [typeof (_t = typeof socket_io_1.Socket !== "undefined" && socket_io_1.Socket) === "function" ? _t : Object, database_1.User]),
     __metadata("design:returntype", void 0)
 ], GameGateway.prototype, "stopQueue", null);
 GameGateway = __decorate([
