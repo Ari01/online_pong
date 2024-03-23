@@ -6,10 +6,10 @@ export declare class NotifService {
     private notifRepository;
     private readonly userService;
     constructor(notifRepository: Repository<Notif>, userService: UsersService);
-    createNotif(data: NotifData): unknown;
-    findChanInvite(data: NotifData): unknown;
-    findNotif(data: NotifData): unknown;
-    getNotifs(userId: number): unknown;
-    getChanNotifs(channel: Channel): unknown;
-    deleteNotif(notif: Notif): any;
+    createNotif(data: NotifData): Promise<Notif>;
+    findChanInvite(data: NotifData): Promise<Notif>;
+    findNotif(data: NotifData): Promise<Notif>;
+    getNotifs(userId: number): Promise<Notif[]>;
+    getChanNotifs(channel: Channel): Promise<Notif[]>;
+    deleteNotif(notif: Notif): Promise<void>;
 }

@@ -51,9 +51,9 @@ export class AuthController {
     console.log("redirect");
     req.res.setHeader("Set-Cookie", [accessTokenCookie]);
     if (req.user.isTwoFactorAuthenticationEnabled)
-      res.redirect(`http://192.168.233.232:3000/login/2fa`);
+      res.redirect(`${process.env.FRONT_URL}/login/2fa`);
     else {
-      res.redirect("http://192.168.233.232:3000/login/redirect");
+      res.redirect(`${process.env.FRONT_URL}/login/redirect`);
       console.log("2fa is off, redirected ");
     }
   }

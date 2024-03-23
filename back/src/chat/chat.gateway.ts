@@ -22,7 +22,7 @@ import { GameService } from "src/game/game.service";
 
 @WebSocketGateway(3002, {
   cors: {
-    origin: "http://192.168.233.232:3000",
+    origin: `${process.env.FRONT_URL}`,
   },
   namespace: "chat",
 })

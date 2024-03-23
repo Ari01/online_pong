@@ -21,7 +21,7 @@ export declare class GameGateway {
     createGame(client: Socket, data: any): void;
     getGame(client: Socket, userId: number): void;
     getCurrentGames(client: Socket, data: any): void;
-    endGame(game: GameType): any;
+    endGame(game: GameType): Promise<void>;
     startGame(client: Socket, game: GameType): void;
     rematch(client: Socket, game: GameType): void;
     movePaddle(client: Socket, data: any): void;

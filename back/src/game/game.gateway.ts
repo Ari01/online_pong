@@ -12,7 +12,7 @@ import { QueueService } from "./queue.service";
 
 @WebSocketGateway(3003, {
   cors: {
-    origin: "http://192.168.233.232:3000",
+    origin: `${process.env.FRONT_URL}`,
   },
   namespace: "game",
 })

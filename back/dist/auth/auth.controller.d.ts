@@ -8,16 +8,16 @@ export declare class AuthController {
     constructor(twoFactorAuthenticationService: TwoFactorAuthenticationService, usersService: UsersService, authService: AuthService);
     login(): void;
     logout(req: any): void;
-    redirect(req: any, res: any): any;
+    redirect(req: any, res: any): Promise<void>;
     devLogin(req: any, { username }: {
         username: any;
-    }): unknown;
-    register(res: any, req: any): unknown;
+    }): Promise<any>;
+    register(res: any, req: any): Promise<void>;
     turnOnTwoFactorAuthentication(req: any, { code }: {
         code: any;
-    }): unknown;
-    turnOffTwoFactorAuthentication(req: any): unknown;
+    }): Promise<boolean>;
+    turnOffTwoFactorAuthentication(req: any): Promise<boolean>;
     authenticate(req: any, { code }: {
         code: any;
-    }): unknown;
+    }): Promise<any>;
 }
