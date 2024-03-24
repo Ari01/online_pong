@@ -5,6 +5,8 @@ WORKDIR /app_backend
 # Install dependencies required for project
 RUN npm i -g @nestjs/cli
 
+COPY . .
+
 EXPOSE 3001
 
 ENTRYPOINT npm install && npm run start:dev

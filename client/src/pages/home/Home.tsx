@@ -51,8 +51,14 @@ function Games() {
 
 export default function Home() {
   //const isLogged = React.useContext(Auth);
+  console.log('Home screen')
   const socket = useContext(GameContext);
   const [games, setGames] = useState<GameInfos[] | null>(null);
+
+  console.log('chat env is')
+  console.log(process.env.REACT_APP_CHAT)
+  console.log('game env is')
+  console.log(process.env.REACT_APP_GAME)
 
   useEffect(() => {
     socket.emit("getCurrentGames");

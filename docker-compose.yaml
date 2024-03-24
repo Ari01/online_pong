@@ -3,7 +3,7 @@ version: '3'
 services:
   api:
     build:
-      context: ./docker/
+      context: ./back/
       dockerfile: Dockerfile-backend
     ports:
       - "3003:3003"
@@ -19,7 +19,7 @@ services:
 
   webapp:
     build:
-      context: ./docker/
+      context: ./client/
       dockerfile: Dockerfile-frontend
     ports:
       - "3000:3000"

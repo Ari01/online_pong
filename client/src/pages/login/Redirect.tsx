@@ -14,6 +14,10 @@ const Redirect: React.FC<IRedirectProps> = ({ setIsLogged, setUser }) => {
   const navigate = useNavigate();
   const socket = useContext(ChatContext);
 
+  console.log('redirect route')
+  console.log('socket is')
+  console.log(socket)
+
   useEffect(() => {
     axios(`${process.env.REACT_APP_API}/api/users`, { withCredentials: true })
       .then((res) => {
@@ -29,7 +33,7 @@ const Redirect: React.FC<IRedirectProps> = ({ setIsLogged, setUser }) => {
       .catch((e) => {
         console.log("User not found " + e);
       });
-  }, []);
+  }, [socket]);
 
   return <></>;
 };

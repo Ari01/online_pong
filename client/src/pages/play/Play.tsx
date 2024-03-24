@@ -8,6 +8,7 @@ import GameComponent from "../games/GameComponent";
 import "../../styles/play.css";
 
 export default function Play() {
+  console.log('play screen')
   const [room, setRoom] = useState<roomType | null>(null);
 
   useLobbyEvents({ setRoom });

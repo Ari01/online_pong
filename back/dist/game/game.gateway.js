@@ -338,7 +338,7 @@ __decorate([
 GameGateway = __decorate([
     (0, websockets_1.WebSocketGateway)(3003, {
         cors: {
-            origin: `${process.env.FRONT_URL}`,
+            origin: true,
         },
         namespace: "game",
     }),

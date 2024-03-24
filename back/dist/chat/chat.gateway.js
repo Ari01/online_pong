@@ -568,7 +568,7 @@ __decorate([
 ChatGateway = __decorate([
     (0, websockets_1.WebSocketGateway)(3002, {
         cors: {
-            origin: `${process.env.FRONT_URL}`,
+            origin: true,
         },
         namespace: "chat",
     }),

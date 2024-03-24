@@ -40,6 +40,11 @@ export default function Router() {
   const [modal, setModal] = useState<ModalType | null>(null);
   const [countdown, setCountdown] = useState<CountdownType | null>(null);
 
+  console.log('chat socket is')
+  console.log(`${process.env.REACT_APP_CHAT}`)
+  console.log('game socket is')
+  console.log(`${process.env.REACT_APP_GAME}`)
+
   useLogginEvent({ user, setUser, setIsLogged, isLogged });
   useQueueEvents({ countdown, setCountdown });
   useErrorEvent();
