@@ -5,6 +5,7 @@ import { User } from "src/database/entities/User";
 import { UserDetails } from "src/utils/types";
 import { JwtService } from "@nestjs/jwt";
 import { UsersService } from "src/users/users.service";
+import * as bcrypt from 'bcrypt'
 
 @Injectable()
 export class AuthService {
@@ -12,7 +13,7 @@ export class AuthService {
     @InjectRepository(User) private readonly userRepository: Repository<User>,
     private readonly jwtService: JwtService,
     private readonly usersService: UsersService
-  ) {}
+  ) { }
 
   async createUser(details: UserDetails) {
     const user = {
@@ -42,6 +43,36 @@ export class AuthService {
     /*console.log('user not found. Creating...')
     console.log('newUser', newUser);*/
     return this.userRepository.save(newUser);
+  }
+
+  async createAdminUser(username: string, password: string) {
+    const hashedPass = await bcrypt.hash(password, 10);
+    const user = this.userRepository.create({
+      username,
+      password,
+      id42: 1,
+      email: 'hidden',
+      winratio: "no games played",
+      profile_pic: '',
+      elo: 0,
+      n_win: 0,
+      n_lose: 0,
+      date_of_sign: new Date(),
+    })
+
+    return user;
+  }
+
+  async validateAdminUser(username: string, password: string) {
+    const user = await this.usersService.getByUsername(username)
+
+    if (!user)
+      return null;
+    const res = await bcrypt.compare(password, user.password)
+
+    if (res)
+      return user;
+    return null;
   }
 
   async findUser(id: number) {

@@ -32,7 +32,8 @@ export default function Login() {
       )
       .then((response) => {
         console.log("redirecting");
-        socket.emit("login", response.data);
+        if (response && response.data) 
+          socket.emit("login", response.data);
       })
       .catch((e) => console.log("error login dev"));
   };
@@ -80,13 +81,13 @@ export default function Login() {
           name="button 1"
         >
           Connect with 42
-        </button>
-        {/*<button
+    </button>
+        <button
           onClick={() => setDevLog(true)}
           className="btn btn-sm md:btn-md  gap-2 normal-case lg:gap-3"
         >
           Dev connect
-    </button>*/}
+    </button>
       </div>
     );
   }

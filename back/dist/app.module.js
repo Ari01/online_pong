@@ -27,6 +27,7 @@ AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             config_1.ConfigModule.forRoot({
+                envFilePath: 'stag.env',
                 validationSchema: Joi.object({
                     FT_ID: Joi.string().required(),
                     FT_SECRET: Joi.string().required(),

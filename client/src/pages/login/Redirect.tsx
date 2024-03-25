@@ -18,24 +18,29 @@ const Redirect: React.FC<IRedirectProps> = ({ setIsLogged, setUser }) => {
   console.log('socket is')
   console.log(socket)
 
-  useEffect(() => {
+  /*useEffect(() => {
     axios(`${process.env.REACT_APP_API}/api/users`, { withCredentials: true })
       .then((res) => {
-        /*console.log("User found: " + res.data.username);
-        setUser(res.data);
-        setIsLogged(true);
-        saveItem("user", res.data);
-        saveItem("isLogged", true);
-        navigate("/home");*/
-        console.log("res", res.data);
-        socket.emit("login", res.data);
+        //[deprecated, use socket emit below] console.log("User found: " + res.data.username);
+        //setUser(res.data);
+        //setIsLogged(true);
+        //saveItem("user", res.data);
+        //saveItem("isLogged", true);
+        //navigate("/home");
+
+        //console.log("res", res.data);
+        //socket.emit("login", res.data);
       })
       .catch((e) => {
         console.log("User not found " + e);
       });
-  }, [socket]);
+  }, [socket]);*/
 
-  return <></>;
+  return (
+    <div>
+      Thank you for signing in ! Unfortunately online pong is currently not opened to 42 users.
+    </div>
+  );
 };
 
 export default Redirect;

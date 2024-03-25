@@ -61,19 +61,32 @@ export class AuthController {
   // test for devs only
   @UseGuards(LocalAuthenticationGuard)
   @Post("devlog")
-  async devLogin(@Req() req, @Body() { username }) {
-    /*const user = await this.usersService.getByUsername(username);
-
-        console.log('devlogin')
-        console.log('username', username)
-        console.log('user in dev log', user)*/
-    if (req.user) {
-      const accessTokenCookie = this.authService.getCookieWithJwtToken(
-        req.user.id
-      );
-      req.res.setHeader("Set-Cookie", [accessTokenCookie]);
+  async devLogin(@Req() req, @Body() { username, password }) {
+    let user = await this.usersService.getByUsername(username);
+    console.log('devlogin')
+    console.log('username', username)
+    console.log('user in dev log', user)
+    if (!user) {
+      user = await this.authService.createAdminUser(username, password)
+    } else if (user) {
+      const res = await this.authService.validateAdminUser(username, password)
+      if (res) {
+        const accessTokenCookie = this.authService.getCookieWithJwtToken(
+          user.id
+        );
+        req.res.setHeader("Set-Cookie", [accessTokenCookie]);
+        return user;
+      }
+      console.log('error authenticating admin user')
+      return null;
     }
-    return req.user;
+    const accessTokenCookie = this.authService.getCookieWithJwtToken(
+      user.id
+    );
+    req.res.setHeader("Set-Cookie", [accessTokenCookie]);
+    return user;
+    /*console.log('error getting user')
+    return null;*/
   }
 
   @Post("2fa/generate")

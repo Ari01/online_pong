@@ -17,11 +17,13 @@ dotenv.config();
 @Module({
   imports: [
     ConfigModule.forRoot({
+      envFilePath: 'stag.env',
       validationSchema: Joi.object({
         FT_ID: Joi.string().required(),
         FT_SECRET: Joi.string().required(),
         FT_CALLBACK_URL: Joi.string().required(),
       }),
+
     }),
     AuthModule,
     PassportModule.register({ session: true }),
