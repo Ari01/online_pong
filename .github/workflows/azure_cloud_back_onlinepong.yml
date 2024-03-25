@@ -59,4 +59,4 @@ jobs:
           app-name: 'onlinePong'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3F7646188C344A8BA84FC3610A084279 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E7B0DB4AB937430D9A362F24D408FD3F }}
