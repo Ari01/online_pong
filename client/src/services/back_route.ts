@@ -1,1 +1,0 @@
-export const BACK_ROUTE = "${process.env.REACT_APP_API}/api/"
