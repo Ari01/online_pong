@@ -28,7 +28,7 @@ dotenv.config();
     AuthModule,
     PassportModule.register({ session: true }),
     TypeOrmModule.forRoot({
-      type: "postgres",
+      type: 'mysql', // postgres
       host: process.env.DB_HOST,
       port: parseInt(process.env.DB_PORT),
       username: process.env.DB_USER,
