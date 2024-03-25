@@ -36,8 +36,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:dev": "env-cmd -f dev.env npm start --watch",
-    "build": "env-cmd -f stag.env npm run build",
+    "start:dev": "npm start --watch",
+    "build": "npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
