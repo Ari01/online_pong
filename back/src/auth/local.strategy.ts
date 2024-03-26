@@ -11,13 +11,14 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(username: string, password: string): Promise<User> {
-    /*console.log('local validate')
-        console.log(username)*/
+    console.log('local validate')
+    console.log(username)
+    console.log(password)
     const user = await this.authenticationService.validateAdmin(
       username, password
     );
 
-    //console.log("user after validate", user);
+    console.log('user')
     return user;
   }
 }

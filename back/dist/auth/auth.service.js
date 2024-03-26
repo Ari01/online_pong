@@ -27,6 +27,7 @@ let AuthService = class AuthService {
         this.usersService = usersService;
     }
     async createAdmin(username, password) {
+        console.log('creating admin');
         let user = this.userRepository.create({
             username: username,
             id42: 1,
@@ -39,24 +40,35 @@ let AuthService = class AuthService {
             date_of_sign: new Date(),
         });
         if (user) {
+            console.log('user created, encrypting pass');
             user.password = await bcrypt.hash(password, 10);
+            console.log('pass encrypted, saving user');
             user = await this.userRepository.save(user);
+            console.log('user saved, returning new user');
             return user;
         }
         console.log('error creating admin');
         return null;
     }
     async validateAdmin(username, password) {
+        console.log('validate admin');
         let user = await this.usersService.getByUsername(username);
         if (!user) {
+            console.log('user not found, creating new one');
             user = await this.createAdmin(username, password);
+            console.log('returned user');
+            console.log(user);
             return user;
         }
         else {
+            console.log('user found, comparing passwords');
             const checkPassword = await bcrypt.compare(password, user.password);
-            if (checkPassword)
+            if (checkPassword) {
+                console.log('password ok');
                 return user;
+            }
         }
+        console.log('error authenticating user');
         return null;
     }
     async createUser(details) {

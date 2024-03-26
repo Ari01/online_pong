@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 3001
 
-ENTRYPOINT npm install && npm run start:dev
+ENTRYPOINT npm install && npm uninstall bcrypt && npm i bcrypt && npm run start:dev

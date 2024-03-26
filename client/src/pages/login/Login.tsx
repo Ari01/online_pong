@@ -94,12 +94,12 @@ export default function Login() {
         >
           Connect with 42
         </button>
-        {/*<button
+        <button
           onClick={() => setDevLog(true)}
           className="btn btn-sm md:btn-md  gap-2 normal-case lg:gap-3"
         >
           Dev connect
-    </button>*/}
+        </button>
       </div>
     );
   }

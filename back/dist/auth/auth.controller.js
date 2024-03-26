@@ -49,9 +49,16 @@ let AuthController = class AuthController {
         }
     }
     async devLogin(req, { username, password }) {
+        console.log('devlogin');
+        console.log(username);
+        console.log(password);
         if (req.user) {
+            console.log('user ok');
             const accessTokenCookie = this.authService.getCookieWithJwtToken(req.user.id);
             req.res.setHeader("Set-Cookie", [accessTokenCookie]);
+        }
+        else {
+            console.log('user not ok');
         }
         return req.user;
     }

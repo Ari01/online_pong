@@ -62,16 +62,23 @@ export class AuthController {
   @UseGuards(LocalAuthenticationGuard)
   @Post("devlog")
   async devLogin(@Req() req, @Body() { username, password }) {
+    //const user = await this.authService.validateAdmin(username, password)
     /*const user = await this.usersService.getByUsername(username);
 
         console.log('devlogin')
         console.log('username', username)
         console.log('user in dev log', user)*/
+        console.log('devlogin')
+        console.log(username)
+        console.log(password)
     if (req.user) {
+      console.log('user ok')
       const accessTokenCookie = this.authService.getCookieWithJwtToken(
         req.user.id
       );
       req.res.setHeader("Set-Cookie", [accessTokenCookie]);
+    } else {
+      console.log('user not ok')
     }
     return req.user;
   }
