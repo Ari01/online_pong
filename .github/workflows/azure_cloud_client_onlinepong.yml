@@ -58,4 +58,4 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_57B1E837F5654C2DAE4DB8E4FF57CEBD }}
 
       - name: Delete zip file
-        run: rm nest.zip
+        run: rm release.zip
