@@ -11,7 +11,8 @@ export function VerifLogged() {
 
 export default function Login() {
   const [devlog, setDevLog] = useState(false);
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('')
   const socket = useContext(ChatContext);
 
   const buttonAuth = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -26,13 +27,17 @@ export default function Login() {
         `${process.env.REACT_APP_API}/api/auth/devlog`,
         {
           username,
-          password: "password",
+          password,
         },
         { withCredentials: true }
       )
       .then((response) => {
-        console.log("redirecting");
-        socket.emit("login", response.data);
+        if (response && response.data) {
+          console.log("redirecting");
+          socket.emit("login", response.data);
+        } else {
+          console.log('error authenticating admin')
+        }
       })
       .catch((e) => console.log("error login dev"));
   };
@@ -47,6 +52,14 @@ export default function Login() {
               className="formInputValue"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="formInput">
+            <div className="formInputName"> Password </div>
+            <input
+              className="formInputValue"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="formButtons">

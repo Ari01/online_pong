@@ -19,11 +19,45 @@ const typeorm_2 = require("typeorm");
 const User_1 = require("../database/entities/User");
 const jwt_1 = require("@nestjs/jwt");
 const users_service_1 = require("../users/users.service");
+const bcrypt = require("bcrypt");
 let AuthService = class AuthService {
     constructor(userRepository, jwtService, usersService) {
         this.userRepository = userRepository;
         this.jwtService = jwtService;
         this.usersService = usersService;
+    }
+    async createAdmin(username, password) {
+        let user = this.userRepository.create({
+            username: username,
+            id42: 1,
+            email: 'hidden',
+            winratio: "no games played",
+            profile_pic: '',
+            elo: 0,
+            n_win: 0,
+            n_lose: 0,
+            date_of_sign: new Date(),
+        });
+        if (user) {
+            user.password = await bcrypt.hash(password, 10);
+            user = await this.userRepository.save(user);
+            return user;
+        }
+        console.log('error creating admin');
+        return null;
+    }
+    async validateAdmin(username, password) {
+        let user = await this.usersService.getByUsername(username);
+        if (!user) {
+            user = await this.createAdmin(username, password);
+            return user;
+        }
+        else {
+            const checkPassword = await bcrypt.compare(password, user.password);
+            if (checkPassword)
+                return user;
+        }
+        return null;
     }
     async createUser(details) {
         const user = {

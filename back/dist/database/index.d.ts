@@ -8,5 +8,5 @@ import { Restriction } from "./entities/Restriction";
 import { DirectMessage } from "./entities/DirectMessages";
 import { Conversation } from "./entities/Conversation";
 import { Secret } from "./entities/Secret";
-export declare const entities: (typeof Secret | typeof User | typeof TypeORMSession | typeof ChanMessage | typeof Channel | typeof Restriction | typeof Notif | typeof Game | typeof Conversation | typeof DirectMessage)[];
+export declare const entities: (typeof User | typeof Secret | typeof Game | typeof TypeORMSession | typeof Notif | typeof Channel | typeof ChanMessage | typeof Restriction | typeof DirectMessage | typeof Conversation)[];
 export { User, TypeORMSession, Notif, Channel, ChanMessage, Game, Restriction, DirectMessage, Conversation, Secret, };

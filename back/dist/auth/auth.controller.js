@@ -38,8 +38,8 @@ let AuthController = class AuthController {
         return;
     }
     async redirect(req, res) {
-        console.log("redirect");
         const accessTokenCookie = this.authService.getCookieWithJwtToken(req.user.id);
+        console.log("redirect");
         req.res.setHeader("Set-Cookie", [accessTokenCookie]);
         if (req.user.isTwoFactorAuthenticationEnabled)
             res.redirect(`${process.env.FRONT_URL}/login/2fa`);
@@ -48,7 +48,7 @@ let AuthController = class AuthController {
             console.log("2fa is off, redirected ");
         }
     }
-    async devLogin(req, { username }) {
+    async devLogin(req, { username, password }) {
         if (req.user) {
             const accessTokenCookie = this.authService.getCookieWithJwtToken(req.user.id);
             req.res.setHeader("Set-Cookie", [accessTokenCookie]);

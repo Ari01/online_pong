@@ -9,8 +9,9 @@ export declare class AuthController {
     login(): void;
     logout(req: any): void;
     redirect(req: any, res: any): Promise<void>;
-    devLogin(req: any, { username }: {
+    devLogin(req: any, { username, password }: {
         username: any;
+        password: any;
     }): Promise<any>;
     register(res: any, req: any): Promise<void>;
     turnOnTwoFactorAuthentication(req: any, { code }: {

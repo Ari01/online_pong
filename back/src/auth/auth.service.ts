@@ -5,6 +5,7 @@ import { User } from "src/database/entities/User";
 import { UserDetails } from "src/utils/types";
 import { JwtService } from "@nestjs/jwt";
 import { UsersService } from "src/users/users.service";
+import * as bcrypt from 'bcrypt'
 
 @Injectable()
 export class AuthService {
@@ -12,7 +13,43 @@ export class AuthService {
     @InjectRepository(User) private readonly userRepository: Repository<User>,
     private readonly jwtService: JwtService,
     private readonly usersService: UsersService
-  ) {}
+  ) { }
+
+  async createAdmin(username: string, password: string) {
+    let user = this.userRepository.create({
+      username: username,
+      id42: 1,
+      email: 'hidden',
+      winratio: "no games played",
+      profile_pic: '',
+      elo: 0,
+      n_win: 0,
+      n_lose: 0,
+      date_of_sign: new Date(),
+    })
+
+    if (user) {
+      user.password = await bcrypt.hash(password, 10)
+      user = await this.userRepository.save(user)
+      return user;
+    }
+    console.log('error creating admin')
+    return null;
+  }
+
+  async validateAdmin(username: string, password: string) {
+    let user = await this.usersService.getByUsername(username);
+
+    if (!user) {
+      user = await this.createAdmin(username, password)
+      return user;
+    } else {
+      const checkPassword = await bcrypt.compare(password, user.password)
+      if (checkPassword)
+        return user;
+    }
+    return null;
+  }
 
   async createUser(details: UserDetails) {
     const user = {

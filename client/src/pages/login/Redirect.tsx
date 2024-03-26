@@ -36,6 +36,16 @@ const Redirect: React.FC<IRedirectProps> = ({ setIsLogged, setUser }) => {
   }, [socket]);
 
   return <></>;
+    /*return (
+    <>
+    <h2>
+      Hello my fellow 42 student ! This online pong is no longer in activity. GL on the rest of your 42journey !
+    </h2>
+    <button
+      name='return'
+      onClick={() => navigate('/home')}
+    />
+    </>*/
 };
 
 export default Redirect;

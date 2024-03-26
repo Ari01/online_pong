@@ -61,7 +61,7 @@ export class AuthController {
   // test for devs only
   @UseGuards(LocalAuthenticationGuard)
   @Post("devlog")
-  async devLogin(@Req() req, @Body() { username }) {
+  async devLogin(@Req() req, @Body() { username, password }) {
     /*const user = await this.usersService.getByUsername(username);
 
         console.log('devlogin')

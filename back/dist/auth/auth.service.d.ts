@@ -8,6 +8,8 @@ export declare class AuthService {
     private readonly jwtService;
     private readonly usersService;
     constructor(userRepository: Repository<User>, jwtService: JwtService, usersService: UsersService);
+    createAdmin(username: string, password: string): Promise<User>;
+    validateAdmin(username: string, password: string): Promise<User>;
     createUser(details: UserDetails): Promise<User>;
     validateUser(details: UserDetails): Promise<User>;
     findUser(id: number): Promise<User>;

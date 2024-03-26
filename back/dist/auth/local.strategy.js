@@ -20,7 +20,7 @@ let LocalStrategy = class LocalStrategy extends (0, passport_1.PassportStrategy)
         this.authenticationService = authenticationService;
     }
     async validate(username, password) {
-        const user = await this.authenticationService.getAuthenticatedUser(username);
+        const user = await this.authenticationService.validateAdmin(username, password);
         return user;
     }
 };
